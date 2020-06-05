@@ -10,7 +10,7 @@ query_file = sys.argv[1]
 settings_file = sys.argv[2]
 
 config = ConfigParser.ConfigParser()
-config.readfp(open('config.properties'))
+config.readfp(open(os.path.join(sys.path[0], 'config.properties')))
 config=dict(config.items(config.sections()[0]))
 beeline_cmd=config["beeline_cmd"].replace("#database#", config["database"])
 
